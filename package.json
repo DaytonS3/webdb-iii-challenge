@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "knex": "^0.16.5",
+    "sqlite3": "^4.0.6"
+  },
+  "name": "webdb-iii-challenge",
+  "description": "## Topics!",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaytonS3/webdb-iii-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaytonS3/webdb-iii-challenge/issues"
+  },
+  "homepage": "https://github.com/DaytonS3/webdb-iii-challenge#readme"
+}
