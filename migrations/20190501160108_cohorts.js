@@ -4,7 +4,10 @@ exports.up = function(knex, Promise) {
 
     tbl.text("name").notNullable();
 
-    tbl.integer("cohort_id").references("id");
+    tbl
+      .integer("cohort_id")
+      .references("id")
+      .notNullable();
   });
 };
 
