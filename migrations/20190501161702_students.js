@@ -3,6 +3,14 @@ exports.up = function(knex, Promise) {
     tbl.increments();
 
     tbl.text("name").notNullable();
+
+    tbl
+      .integer("cohort_id")
+      .unsigned()
+      .references("id")
+      .inTable("students")
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
   });
 };
 

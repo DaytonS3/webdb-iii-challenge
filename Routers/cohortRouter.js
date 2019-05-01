@@ -33,6 +33,17 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.get("/:id/students", (req, res) => {
+  db("cohorts")
+    .where({ id: req.params.id })
+    .then(cohorts => {
+      res.status(200).json(cohorts);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+});
+
 router.post("/", (req, res) => {
   db("cohorts")
     .insert(req.body)

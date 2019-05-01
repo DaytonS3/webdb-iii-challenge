@@ -3,11 +3,6 @@ exports.up = function(knex, Promise) {
     tbl.increments();
 
     tbl.text("name").notNullable();
-
-    tbl
-      .integer("cohort_id")
-      .references("id")
-      .notNullable();
   });
 };
 
