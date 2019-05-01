@@ -46,4 +46,20 @@ router.post("/", (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
+router.put("/:id", (req, res) => {
+  db("cohorts")
+    .where({ id: req.params.id })
+    .update(req.body)
+    .then(count => {
+      if (count > 0) {
+        res.status(200).json({ message: "Update Complete" });
+      } else {
+        res.status(404).json({ message: "Not found" });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ message: "Update failed" });
+    });
+});
+
 module.exports = router;
