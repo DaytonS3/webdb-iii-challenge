@@ -52,13 +52,29 @@ router.put("/:id", (req, res) => {
     .update(req.body)
     .then(count => {
       if (count > 0) {
-        res.status(200).json({ message: "Update Complete" });
+        res.status(200).json({ message: "Delete Complete" });
       } else {
         res.status(404).json({ message: "Not found" });
       }
     })
     .catch(err => {
-      res.status(500).json({ message: "Update failed" });
+      res.status(500).json({ message: "Delete failed" });
+    });
+});
+
+router.delete("/:id", (req, res) => {
+  db("students")
+    .where({ id: req.params.id })
+    .del()
+    .then(count => {
+      if (count > 0) {
+        res.status(200).json({ message: "Delete Complete" });
+      } else {
+        res.status(404).json({ message: "Not found" });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ message: "Delete failed" });
     });
 });
 
